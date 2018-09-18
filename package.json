@@ -7,6 +7,7 @@
     "firebase": "^5.5.0",
     "gmail-sender-oauth": "^1.0.5",
     "googleapis": "27",
+    "moment": "^2.22.2",
     "node-gmail-api": "^0.6.1",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",

@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { AuthData } from '../providers/auth';
 import { GAPI } from '../providers/gapi';
+import * as moment from 'moment';
+
 export interface LoginProps {
 }
 
@@ -53,7 +55,8 @@ export default class Login extends React.Component<LoginProps, LoginState> {
     }
     public async sendEmail() {
         const gapi: any = await GAPI.getInstance();
-        const raw = this.makeBody('jest.castro@gmail.com', 'test subject', 'test message');
+        const subject = `Daily Status Report for ${moment().format("dddd, MMMM Do, YYYY")}`
+        const raw = this.makeBody('jest.castro@gmail.com', subject, 'test message');
         gapi.client.gmail.users.messages.send({
             userId: 'me',
             resource: {
